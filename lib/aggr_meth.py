@@ -14,6 +14,7 @@ def cli():
 
 @click.command(help="Count the number of cities in a given state.")
 def count_cities_in_state():
+    click.echo(click.style("This command count the number of cities in a given state ", fg='green'))
     # Prompt the user for the state name using click's prompt function with added color
     state_name = click.prompt(click.style('Please enter the name of the state', fg='blue'), type=str)
 
@@ -26,18 +27,21 @@ def count_cities_in_state():
 
 @click.command(help="Calculate the average population of cities in a given state.")
 def average_city_population_in_state():
+    click.echo(click.style("This command calculate the average population of cities in a given state.", fg='green'))
     state_name = click.prompt(click.style('Please enter the name of the state', fg='blue'), type=str)
     average = session.query(func.avg(City.population)).join(State).filter(State.name == state_name).scalar()
     click.echo(click.style(f"The average population of cities in {state_name} is: {average:.2f}", fg='green'))
 
 @click.command(help="Find the total area of all cities in a given county.")
 def total_area_in_county():
+    click.echo(click.style("This command find the total area of all cities in a given county.", fg='green'))
     county_name = click.prompt(click.style('Please enter the name of the county', fg='blue'), type=str)
     area = session.query(func.sum(City.area)).join(County).filter(County.name == county_name).scalar()
     click.echo(click.style(f"The total area of cities in {county_name} county is: {area:.2f}", fg='green'))
 
 @click.command(help="Count the number of facilities in a given city.")
 def count_facilities_in_city():
+    click.echo(click.style("This command count the number of facilities in a given city (example: City1 of Miami-Dade ).", fg='green'))
     city_name = click.prompt(click.style('Please enter the name of the city', fg='blue'), type=str)
     count = session.query(func.count(Facilities.id)).join(association_table).join(City).filter(City.name == city_name).scalar()
     click.echo(click.style(f"The number of facilities in {city_name} is: {count}", fg='green'))
@@ -53,8 +57,8 @@ cli.add_command(count_facilities_in_city)
 
 if __name__ == '__main__':
     cli()
-# python aggregate_methods.py count-cities-in-state   
-# python aggregate_methods.py count-cities-in-state 
+# python aggr_meth.py count-cities-in-state   
+# python aggr_meth.py count-cities-in-state 
 # ==> The number of cities in Connecticut is: 4
 
 """
@@ -65,8 +69,8 @@ WHERE s.name = "Florida";
 """
 
 
-# python aggregate_methods.py average-city-population-in-state  
-# python aggregate_methods.py average-city-population-in-state 
+# python aggr_meth.py average-city-population-in-state  
+# python aggr_meth.py average-city-population-in-state 
 # ==> The average population of cities in Connecticut is: 17192.75
 
 """
@@ -78,21 +82,21 @@ WHERE s.name = "Florida";
 """
 
 
-# python aggregate_methods.py total-area-in-county 
-# python aggregate_methods.py total-area-in-county 
+# python aggr_meth.py total-area-in-county 
+# python aggr_meth.py total-area-in-county 
 # ==> The total area of cities in Susanside county is: 1537.00
 
 """
 SELECT SUM(c.area) 
 FROM Cities c
 JOIN Counties co ON c.county_id = co.id
-WHERE co.name = "Susanside";
+WHERE co.name = "Miami-Dade";
 
 """
 
 
-# python aggregate_methods.py count-facilities-in-city  
-# python aggregate_methods.py count-facilities-in-city 
+# python aggr_meth.py count-facilities-in-city  
+# python aggr_meth.py count-facilities-in-city 
 # ==> The number of facilities in Lake Hunter is: 8
 
 """
@@ -101,6 +105,7 @@ FROM Facilities f
 JOIN CityFacilityAssociation cfa ON f.id = cfa.facility_id
 JOIN Cities c ON cfa.city_id = c.id
 WHERE c.name = "Lake Hunter";
+
 
 
 """

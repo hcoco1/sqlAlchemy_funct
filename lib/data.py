@@ -31,63 +31,64 @@ counties_to_add = [
     County(name='Baldwin', population=246617, area=614, state_id=1),
 ]
 
-
+from faker import Faker
+fake = Faker()
 cities_to_add = [
     City(name='City1 of Miami-Dade', population=921122, area=244.33,
-         latitude=0, longitude=0, state_id=2, county_id=1),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=1),
     City(name='City2 of Miami-Dade', population=921122, area=244.33,
-         latitude=0, longitude=0, state_id=2, county_id=1),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=1),
     City(name='City3 of Miami-Dade', population=921122, area=244.33,
-         latitude=0, longitude=0, state_id=2, county_id=1),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=1),
 
     City(name='City1 of Broward', population=13191, area=367.63,
-         latitude=0, longitude=0, state_id=2, county_id=2),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=2),
     City(name='City2 of Broward', population=13191, area=367.63,
-         latitude=0, longitude=0, state_id=2, county_id=2),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=2),
     City(name='City3 of Broward', population=13191, area=367.63,
-         latitude=0, longitude=0, state_id=2, county_id=2),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=2),
 
     City(name='City1 of Palm Beach', population=514603, area=253.33,
-         latitude=0, longitude=0, state_id=2, county_id=3),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=3),
     City(name='City2 of Palm Beach', population=514603, area=253.33,
-         latitude=0, longitude=0, state_id=2, county_id=3),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=3),
     City(name='City3 of Palm Beach', population=514603, area=253.33,
-         latitude=0, longitude=0, state_id=2, county_id=3),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=3),
 
     City(name='City1 of Hillsborough', population=509641, area=131.33,
-         latitude=0, longitude=0, state_id=2, county_id=4),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=4),
     City(name='City2 of Hillsborough', population=509641, area=131.33,
-         latitude=0, longitude=0, state_id=2, county_id=4),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=4),
     City(name='City3 of Hillsborough', population=509641, area=131.33,
-         latitude=0, longitude=0, state_id=2, county_id=4),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=2, county_id=4),
 
     City(name='City1 of Jefferson', population=226533, area=143.00,
-         latitude=0, longitude=0, state_id=1, county_id=5),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=5),
     City(name='City2 of Jefferson', population=226533, area=143.00,
-         latitude=0, longitude=0, state_id=1, county_id=5),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=5),
     City(name='City3 of Jefferson', population=226533, area=143.00,
-         latitude=0, longitude=0, state_id=1, county_id=5),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=5),
 
     City(name='City1 of Mobile', population=138451, area=158.00,
-         latitude=0, longitude=0, state_id=1, county_id=6),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=6),
     City(name='City2 of Mobile', population=138451, area=158.00,
-         latitude=0, longitude=0, state_id=1, county_id=6),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=6),
     City(name='City3 of Mobile', population=138451, area=158.00,
-         latitude=0, longitude=0, state_id=1, county_id=6),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=6),
 
     City(name='City1 of Madison', population=134718, area=103.33,
-         latitude=0, longitude=0, state_id=1, county_id=7),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=7),
     City(name='City2 of Madison', population=134718, area=103.33,
-         latitude=0, longitude=0, state_id=1, county_id=7),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=7),
     City(name='City3 of Madison', population=134718, area=103.33,
-         latitude=0, longitude=0, state_id=1, county_id=7),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=7),
 
     City(name='City1 of Baldwin', population=82205, area=204.67,
-         latitude=0, longitude=0, state_id=1, county_id=8),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=8),
     City(name='City2 of Baldwin', population=82205, area=204.67,
-         latitude=0, longitude=0, state_id=1, county_id=8),
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=8),
     City(name='City3 of Baldwin', population=82205, area=204.67,
-         latitude=0, longitude=0, state_id=1, county_id=8)
+         latitude=fake.latitude(), longitude=fake.longitude(), state_id=1, county_id=8)
 ]
 
 
